@@ -21,7 +21,6 @@ def add_new_shopping_list(lists_by_name, new_list_name):
       None
     """
 
-    # your code here!
     lists_by_name[new_list_name] = []
 
 
@@ -37,7 +36,6 @@ def remove_shopping_list(lists_by_name, list_name_to_remove):
       None
     """
 
-    # your code here!
     del lists_by_name[list_name_to_remove]
 
 
@@ -52,14 +50,14 @@ def add_to_shopping_list(lists_by_name, list_name, items):
       None
     """
 
-    # your code here!
-    pass
+    lists_by_name[list_name] += items
+
 
 
 def remove_from_shopping_list(lists_by_name, list_name, items):
     """Remove given items from shopping list.
 
-    If an item doesn't exist in the list, print an error, and continue to 
+    If an item doesn't exist in the list, print an error, and continue to
     attempt to remove the other items.
 
     Arguments:
@@ -70,8 +68,15 @@ def remove_from_shopping_list(lists_by_name, list_name, items):
       None
     """
 
-    # your code here!
-    pass
+    temp_list = lists_by_name[list_name]
+
+    for item in items:
+        if item in temp_list:
+            #find item in temp_list and delete
+            del temp_list[temp_list.index(item)]
+        else:
+            print "{} is not in list.".format(item)
+
 
 
 def display_shopping_list(lists_by_name, list_name):
