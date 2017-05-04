@@ -21,15 +21,14 @@ def add_new_shopping_list(lists_by_name, new_list_name):
       None
     """
 
-    # your code here! 
-    pass
+    # your code here!
+    lists_by_name[new_list_name] = []
 
 
 def remove_shopping_list(lists_by_name, list_name_to_remove):
     """Remove shopping list from shopping lists dict.
 
-    If the shopping list name does not exist in the dictionary, print a message
-    and do nothing. This method is case-sensitive.
+    This method is case-sensitive.
 
     Arguments:
       lists_by_name: dict of shopping lists
@@ -38,8 +37,8 @@ def remove_shopping_list(lists_by_name, list_name_to_remove):
       None
     """
 
-    # your code here! 
-    pass
+    # your code here!
+    del lists_by_name[list_name_to_remove]
 
 
 def add_to_shopping_list(lists_by_name, list_name, items):
@@ -53,7 +52,7 @@ def add_to_shopping_list(lists_by_name, list_name, items):
       None
     """
 
-    # your code here! 
+    # your code here!
     pass
 
 
@@ -71,7 +70,7 @@ def remove_from_shopping_list(lists_by_name, list_name, items):
       None
     """
 
-    # your code here! 
+    # your code here!
     pass
 
 
@@ -88,8 +87,10 @@ def display_shopping_list(lists_by_name, list_name):
       None
     """
 
-    # your code here! 
-    pass
+    # your code here!
+    print "\nItems in the {} list:".format(list_name)
+    for items in lists_by_name[list_name]:
+        print "     " + items
 
 
 def show_all_lists(lists_by_name):
@@ -101,8 +102,9 @@ def show_all_lists(lists_by_name):
       None
     """
 
-    # your code here! 
-    pass
+    # your code here!
+    for keys in lists_by_name:
+        display_shopping_list(lists_by_name, keys)
 
 
 def parse_string_of_items(items_string):
