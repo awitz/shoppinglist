@@ -229,7 +229,7 @@ def execute_repl(shopping_lists_by_name):
             # quit
             break
 
-        else:
+        elif choice < 8:
 
             # all of the remaning choices require an existing list. First, run
             # code to get the list name from the user and verify it exists in
@@ -268,7 +268,8 @@ def execute_repl(shopping_lists_by_name):
                 # remove list
 
                 remove_shopping_list(shopping_lists_by_name, list_name)
-
+        else:
+            print "Not a valid entry {}".format(choice)
 # Main code here
 
 shopping_lists_by_name = {}  # key is list name, value is [shopping list]
